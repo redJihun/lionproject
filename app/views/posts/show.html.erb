@@ -1,0 +1,38 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  
+  <h2><%= @post.title %></h2>
+  <hr>
+  <p><strong>내용:</strong></p>
+  <p> <%= @post.content.html_safe %></p>
+  <hr>
+  <p><strong>작성자:</strong></p>
+  <p><%= @post.user.email %></p>
+  <hr>
+  <%= link_to '수정', edit_post_path(@post) %> |
+  <%= link_to '목록으로', posts_path %> |
+  <%= link_to '삭제', @post, method: :delete, data: { confirm: '삭제하시겠습니까?' } %>
+  
+  <hr>
+    <p><strong>동행 신청</strong></p>
+     <!--<div class="well">--><!-- well class는 회색 박스 -->
+      <form action="/posts/<%=@post.id%>" method="post">
+       <div class="form-group">
+        <input type="hidden" value="<%=current_user.id%>" name="user_id"></input>
+        <input type="hidden" value="<%=@post.id%>" name="post_id"></input>
+        <!--<textarea class="form-control" rows="5" name="comment"></textarea> -->
+       </div>
+       <button type="submit" class="btn btn-default">동행 신청</button>
+      </form>
+     <!--</div>-->
+     
+     <hr>
+      <p><strong>현재 신청자 현황</strong></p>
+      <% @comments = @post.comments.all.reverse %>
+      <% @comments.each do |c| %>
+      <div class="container">
+        <p>신청자 명 : <%= c.user.email %></p>
+      </div>
+      <% end %>
+        
+</div>

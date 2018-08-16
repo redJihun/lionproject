@@ -1,0 +1,61 @@
+<!---------------------------------------- 메인페이지 설정입니다.-------------------------------------->
+
+<!--인트로 섹션 -->
+    <section class="view intro-2 hm-gradient">
+        <div class="full-bg-img">
+            <div class="container flex-center">
+                <div class="row flex-center pt-5 mt-3">
+                    <div class="col-md-6 text-center text-md-left margins">
+                        <div class="white-text">
+                            <h1 class="h1-responsive wow fadeInLeft" data-wow-delay="0.3s">멋쟁이사자처럼, <%= current_user.email %>님 환영합니다.</h1>
+                                <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
+                                <h6 class="wow fadeInLeft" data-wow-delay="0.3s">현재 개발중입니다.</h6>
+                                <br>
+                                <a class="btn btn-outline-white wow fadeInLeft" data-wow-delay="0.3s">게시글 작성</a>
+                                <!--<a class="btn btn-outline-white wow fadeInLeft" data-wow-delay="0.3s">Download
+                                    <i class="fa fa-android left right" aria-hidden="true"></i>
+                                    <i class="fa fa-apple left" aria-hidden="true"></i>
+                                    <i class="fa fa-windows" aria-hidden="true"></i>
+                                </a>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!--<div class="container">
+    <div class="jumbotron">
+      <h1 class="display-4">LIKE LION</h1>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="/posts" role="button">신청하기</a> 
+      </p>
+    </div>
+</div>-->
+
+<div class="container">
+    <div class="container">
+        <% if user_signed_in? %>
+            <p><%= current_user.name %>님 환영합니다.</p>
+            <% if current_user.age.present? %>
+                <p>나이 : <%= current_user.age %></p>
+            <% else %>
+                <p>나이 정보를 업데이트 해주세요!</p>
+                <p><a href="/users/edit" class="btn btn-default">프로필수정</a></p>
+            <% end %>
+            <% if current_user.gender.present? %>
+                <p>성별 : <%= current_user.gender %></p>
+            <% else %>
+                <p>성별 정보를 업데이트 해주세요!</p>
+                <p><a href="/users/edit" class="btn btn-default">프로필수정</a></p>
+            <% end %>
+            <p>이메일 : <%= current_user.email %></p>
+            <p><a href="/posts" class="btn btn-default">게시판으로</a></p>
+            <a href="/users/edit">회원정보수정</a>
+            <a href="/users/sign_out">로그아웃</a>
+        <% else %>
+            <p>아직 로그인을 하지 않으셨네요. 로그인을 해주세요~<p>
+            <a href="/users/sign_in">로그인</a>
+        <% end %>
+    </div>
+</div>

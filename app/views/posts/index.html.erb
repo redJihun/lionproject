@@ -1,0 +1,43 @@
+<div class="container">
+
+  <!-- 다음 map API -->
+  <div id="map" style="width:1140px;height:400px;"></div>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3d9b149dd44e76431389c277e2640f6a"></script>
+	<script>
+		var container = document.getElementById('map');
+		var options = {
+			center: new daum.maps.LatLng(33.450701, 126.570667),
+			level: 3
+		};
+
+		var map = new daum.maps.Map(container, options);
+	</script>
+
+
+    <h1>신청 현황 목록</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>제목</th>
+          <th>작성자</th>
+        </tr>
+      </thead>
+      
+    
+      <tbody>
+        <% @posts.each do |post| %>
+          <tr>
+            <td><%= link_to post.title, post %></td>
+            <td><%= post.user.email %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    
+    <br>
+    <%= will_paginate @posts, :previous_label => '이전', :next_label => '다음' %>
+    <p><a class="btn btn-primary btn-lg" href="/posts/new" role="button">신청하기</a>
+    <!--<p><%#= link_to '신청서 작성', new_post_path %></p>-->
+      <a class="btn btn-secondary btn-lg" href="/">홈페이지로</a>
+    </p>
+</div>
