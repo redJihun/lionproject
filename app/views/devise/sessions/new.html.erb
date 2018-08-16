@@ -1,3 +1,8 @@
+<head>
+      <!-- 로그인 css --->
+    <link rel="stylesheet" href="/css/login.css">
+  
+</head>
 <header>
   <div class="overlay"></div>
   <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
@@ -23,8 +28,7 @@
               </div>
               <% if devise_mapping.rememberable? %>
                 <div class="checkbox">
-                  <%= do %>
-                  <span>기억하기</span>
+                  <%= f.label :remember_me do %>
                     <%= f.check_box :remember_me %> <%= t('.remember_me', default: 'Remember me') %>
                   <% end %>
                 </div>
