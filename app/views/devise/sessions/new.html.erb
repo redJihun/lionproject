@@ -1,29 +1,48 @@
-<div class="container">
-  <div class="panel panel-default devise-bs col-md-offset-4 col-md-4">
-    <div class="panel-heading">
-      <h4><%= t('.sign_in', default: 'Sign in') %></h4>
-    </div>
-    <div class="panel-body">
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: 'form' }) do |f| %>
-        <div class="form-group">
-          <%= f.label :email %>
-          <%= f.email_field :email, autofocus: true, class: 'form-control' %>
-        </div>
-        <div class="form-group">
-          <%= f.label :password %>
-          <%= f.password_field :password, autocomplete: 'off', class: 'form-control' %>
-        </div>
-        <% if devise_mapping.rememberable? %>
-          <div class="checkbox">
-            <%= f.label :remember_me do %>
-              <%= f.check_box :remember_me %> <%= t('.remember_me', default: 'Remember me') %>
+<header>
+  <div class="overlay"></div>
+  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+    <source src="/video/couple_waiting.mp4" type="video/mp4">
+  </video>
+  <div class="container h-100">
+    <div class="d-flex text-center h-100">
+      <div class="my-auto w-100 text-white">
+              <div class="container">
+        <div class="panel panel-default devise-bs col-md-offset-4 col-md-4">
+          <div class="panel-heading">
+            <h3> 로그인 </h3>
+          </div>
+          <div class="panel-body">
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: 'form' }) do |f| %>
+              <div class="form-group">
+                <h4>이메일 주소</h4>
+                <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+              </div>
+              <div class="form-group">
+                <h4>비밀번호</h4>
+                <%= f.password_field :password, autocomplete: 'off', class: 'form-control' %>
+              </div>
+              <% if devise_mapping.rememberable? %>
+                <div class="checkbox">
+                  <%= do %>
+                  <span>기억하기</span>
+                    <%= f.check_box :remember_me %> <%= t('.remember_me', default: 'Remember me') %>
+                  <% end %>
+                </div>
+              <% end %>
+              <%= f.submit  t('.sign_in', default: 'Sign in'), class: 'btn btn-primary' %>
             <% end %>
           </div>
-        <% end %>
-        <%= f.submit  t('.sign_in', default: 'Sign in'), class: 'btn btn-primary' %>
-      <% end %>
+          <%= render 'devise/shared/links' %>
+        </div>
+      </div>
+        
+      </div>
     </div>
-    <%= render 'devise/shared/links' %>
   </div>
-</div>
+</header>
+
+
+
+
+
 
