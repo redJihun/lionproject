@@ -1,39 +1,37 @@
-.intro-2 {
-    background: url("https://mdbootstrap.com/img/Photos/Others/architecture.jpg")no-repeat center center;
-    background-size: cover;
+body {
+  background: url('/image/background.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
 }
-.btn .fa {
-    margin-left: 3px;
+
+.orange-circle-button {
+ box-shadow: 2px 4px 0 2px rgba(0,0,0,0.1);
+ border: .5em solid #B96018;
+ font-size: 1em;
+ line-height: 1.1em;
+ color: #ffffff;
+ background-color: #E7781E;
+ margin: auto;
+ border-radius: 50%;
+ height: 10em;
+ width: 10em;
+ position: relative;
 }
-.top-nav-collapse {
-    background-color: #424f95 !important;
+.orange-circle-button:hover {
+ color:#ffffff;
+ background-color: #e84d0e;
+ text-decoration: none;
+ border-color: #ff7536;
+ 
 }
-.navbar:not(.top-nav-collapse) {
-    background: transparent !important;
+.orange-circle-button:visited {
+ color:#ffffff;
+    background-color: #e84d0e;
+ text-decoration: none;
+ 
 }
-@media (max-width: 768px) {
-    .navbar:not(.top-nav-collapse) {
-        background: #424f95 !important;
-    }
-}
-h6 {
-    line-height: 1.7;
-}
-.hm-gradient .full-bg-img {
-    background: -moz-linear-gradient(45deg, rgba(42, 27, 161, 0.6), rgba(29, 210, 177, 0.6) 100%);
-    background: -webkit-linear-gradient(45deg, rgba(42, 27, 161, 0.6), rgba(29, 210, 177, 0.6) 100%);
-    background: -webkit-gradient(linear, 45deg, from(rgba(42, 27, 161, 0.6)), to(rgba(29, 210, 177, 0.6)));
-    background: -o-linear-gradient(45deg, rgba(42, 27, 161, 0.6), rgba(29, 210, 177, 0.6) 100%);
-    background: linear-gradient(to 45deg, rgba(42, 27, 161, 0.6), rgba(29, 210, 177, 0.6) 100%);
-}
-@media (max-width: 450px) {
-    .margins {
-        margin-right: 1rem;
-        margin-left: 1rem;
-    }
-}
-@media (max-width: 740px) {
-    *,body,header,header .view {
-        height: 1040px;
-    }
+.orange-circle-link-greater-than {
+    font-size: 1em;
 }

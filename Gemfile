@@ -5,7 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+#역할설정 잼
+gem 'rolify'
+#권한부여 잼
+gem 'cancancan'
 gem 'rails_db'
 gem 'rails-i18n'
 #게시판 기능 추가, 폰트 편집 등
