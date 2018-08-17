@@ -13,7 +13,6 @@
          <%= f.email_field :email, autofocus: true, class: 'form-control' %>
         <label><b>비밀번호</b></label>
          <%= f.password_field :password, autocomplete: 'off', class: 'form-control' %>
-        <%= f.submit  t('.sign_in', default: 'Sign in'), class: 'btn btn-primary' %>
         <button f.submit type="submit" ,t('.sign_in', default: 'Sign in'>로그인</button>
         <% if devise_mapping.rememberable? %>
                 <div class="checkbox">
