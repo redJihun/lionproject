@@ -8,7 +8,8 @@ class Ability
       if user.admin?
         can :manage, :all
       else
-        can :read, :all
+        can [:index,:show, :new, :create], :all        //모든글에 대해 가능
+        can [:edit, :destroy], Post, user_id: user.id  //자기글에 한해서만 가능.
       end
     #
     # The first argument to `can` is the action you are giving the user
