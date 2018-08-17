@@ -1,15 +1,16 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(user)
+   def initialize(user)
     # Define abilities for the passed in user here. For example:
     #
       user ||= User.new # guest user (not logged in)
-      if user.admin?
+      if user.has_role? :admin
         can :manage, :all
       else
-        can [:index,:show, :new, :create], :all        //모든글에 대해 가능
-        can [:edit, :destroy], Post, user_id: user.id  //자기글에 한해서만 가능.
+        can [:index, :show, :new, :create], Post
+        can [:edit, :update, :destroy], Post, user_id: user.id
+        can [:create], Comment
       end
     #
     # The first argument to `can` is the action you are giving the user

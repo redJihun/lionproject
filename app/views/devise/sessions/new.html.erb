@@ -2,33 +2,31 @@
 <link rel="stylesheet" href="/css/login.css">
 
 <div class="login-form-block">
-    <form>
-       <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: 'form' }) do |f| %>
-      <div class="logo">
-        <img src="/image/login_logo.png" alt="logo">
+    <div class="test">
+        <div class="logo">
+          <img src="/image/login_logo.png" alt="logo">
+        </div>
+            
+            <div class="container">
+              <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: 'form' }) do |f| %>
+              <label><b>아이디</b></label>
+               <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+              <label><b>비밀번호</b></label>
+               <%= f.password_field :password, autocomplete: 'off', class: 'form-control' %>
+              <%= f.submit  t('.sign_in', default: 'Sign in'), class: 'btn btn-primary btn-lg btn-block' %>
+              <% if devise_mapping.rememberable? %>
+                      <div class="checkbox">
+                        <%= f.label :remember_me do %>
+                          <%= f.check_box :remember_me %> <%= t('.remember_me', default: '아이디 저장') %>
+                        <% end %>
+                      </div>
+              <% end %>
+               <% end %>
+            </div>
+           
+            <div class="container" style="background-color:#f1f1f1">
+              <span class="psw"><a href="/user/">비밀번호 찾기</a></span>
+              <span class="psw"><a href="/users/sign_up">회원가입</a></span>
+            </div>
+          </div>
       </div>
-    
-      <div class="container">
-        <label><b>아이디</b></label>
-         <%= f.email_field :email, autofocus: true, class: 'form-control' %>
-        <label><b>비밀번호</b></label>
-         <%= f.password_field :password, autocomplete: 'off', class: 'form-control' %>
-        <button f.submit type="submit" ,t('.sign_in', default: 'Sign in')>로그인</button>
-        <% if devise_mapping.rememberable? %>
-                <div class="checkbox">
-                  <%= f.label :remember_me do %>
-                    <%= f.check_box :remember_me %> <%= t('.remember_me', default: '아이디 저장') %>
-                  <% end %>
-                </div>
-        <% end %>
-      </div>
-      <% end %>
-      <div class="container" style="background-color:#f1f1f1">
-
-        <span class="psw"><a href="#">비밀번호 찾기</a></span>
-        <span class="psw"><a href="#">회원가입</a></span>
-      </div>
-              <%= render 'devise/shared/links' %>
-    </form>
-    
-</div>
