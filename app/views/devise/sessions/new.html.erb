@@ -2,11 +2,11 @@
 <link rel="stylesheet" href="/css/login.css">
 
   <div class="containers">
-        <div class="panel panel-default devise-bs center-block  text-center" style="padding:150px;">
-          <div class="panel-heading">
+        <div class="panel panel-default devise-bs center-block text-center" style="padding:150px;">
+          <div class="panel-heading text_box">
             <h5> 로그인 </h5>
           </div>
-          <div class="panel-body">
+          <div class="panel-body text_box">
             <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: 'form' }) do |f| %>
               <div class="form-group">
                 <h4>이메일 주소</h4>

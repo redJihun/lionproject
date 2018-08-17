@@ -1,3 +1,7 @@
 body {
-    background-image:url(couple_waiting.png);
+    background-image:url(/image/couple_waiting.png);
+}
+
+.text_box{
+    background-color: #fff;
 }
