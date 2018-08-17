@@ -1,24 +1,20 @@
       <!-- 로그인 css --->
 <link rel="stylesheet" href="/css/login.css">
 
-
-<div class="container h-100">
-    <div class="d-flex text-center h-100">
-      <div class="my-auto w-100 text-white">
-        <div class="container">
-        <div class="panel panel-default devise-bs col-md-offset-4 col-md-4">
+  <div class="containers">
+        <div class="panel panel-default devise-bs center-block  text-center" style="padding:150px;">
           <div class="panel-heading">
-            <h3> 로그인 </h3>
+            <h5> 로그인 </h5>
           </div>
           <div class="panel-body">
             <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: 'form' }) do |f| %>
               <div class="form-group">
                 <h4>이메일 주소</h4>
-                <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+                <%= f.email_field :email, autofocus: true, class: 'col-xs-2' %>
               </div>
               <div class="form-group">
                 <h4>비밀번호</h4>
-                <%= f.password_field :password, autocomplete: 'off', class: 'form-control' %>
+                <%= f.password_field :password, autocomplete: 'off', class: 'col-xs-2' %>
               </div>
               <% if devise_mapping.rememberable? %>
                 <div class="checkbox">
@@ -33,8 +29,4 @@
           </div>
           <%= render 'devise/shared/links' %>
         </div>
-      </div>
-        
-      </div>
-    </div>
-  </div>
+</div>
