@@ -13,7 +13,7 @@
          <%= f.email_field :email, autofocus: true, class: 'form-control' %>
         <label><b>비밀번호</b></label>
          <%= f.password_field :password, autocomplete: 'off', class: 'form-control' %>
-        <button f.submit type="submit" ,t('.sign_in', default: 'Sign in'>로그인</button>
+        <button f.submit type="submit" ,t('.sign_in', default: 'Sign in')>로그인</button>
         <% if devise_mapping.rememberable? %>
                 <div class="checkbox">
                   <%= f.label :remember_me do %>
@@ -24,8 +24,11 @@
       </div>
       <% end %>
       <div class="container" style="background-color:#f1f1f1">
+
         <span class="psw"><a href="#">비밀번호 찾기</a></span>
         <span class="psw"><a href="#">회원가입</a></span>
       </div>
+              <%= render 'devise/shared/links' %>
     </form>
+    
 </div>
